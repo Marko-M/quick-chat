@@ -1,0 +1,510 @@
+# Translation of Quick Chat in Finnish
+# This file is distributed under the same license as the Quick Chat package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2012-12-16 22:05+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/0.1\n"
+"Project-Id-Version: Quick Chat\n"
+"POT-Creation-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1308
+msgid "LOADING..."
+msgstr ""
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1260
+msgid "For displaying country flags on user list %s requires free WordPress plugin %s version %s or later installed, activated and %s support in %s settings not disabled | %s | %s"
+msgstr ""
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:973
+msgid "Do automatic daily cleanup to delete messages older than target number of messages:"
+msgstr ""
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:978
+msgid "Target number of messages for automatic daily cleanup and chat interface \"Clean\" button:"
+msgstr ""
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:987
+msgid "Automatically delete all messages from all private chat rooms as well as old private chat invitations daily:"
+msgstr ""
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:988
+msgid "Delete all messages from all private chat rooms as well as old private chat invitations now:"
+msgstr ""
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:999
+msgid "Disable %s integration (to hide country flags on user list):"
+msgstr ""
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1266
+msgid "More"
+msgstr ""
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1267
+msgid "Dismiss"
+msgstr ""
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:352
+msgid "Done"
+msgstr ""
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:732
+msgid "You're banned from chat."
+msgstr ""
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:864
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:875
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:934
+msgid "Must be positive integer."
+msgstr ""
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:892
+msgid "Must be positive integer less than %d."
+msgstr ""
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:901
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:923
+msgid "Must be integer with value between %d and %d."
+msgstr ""
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:912
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:945
+msgid "Must be positive integer with value %d or greater."
+msgstr ""
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:990
+msgid "WordPress user roles allowed to access moderation tools:"
+msgstr ""
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/widgets.php:84
+msgid "Include counter:"
+msgstr ""
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:716
+msgid "You've been dropped out of chat due to long period of inactivity. To continue with chat please refresh this page."
+msgstr "Sinut on poistettu chatistä joutilaisuuden vuoksi. Voit palata chattiin lataamalla sivun uudelleen."
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:863
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:976
+msgid "Interval for refreshing list of online users (seconds):"
+msgstr "Kävijälistan päivitysten välinen tauko (sekunteina):"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:874
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:977
+msgid "Interval for refreshing list of messages (seconds):"
+msgstr "Uusien viestien päivitystauko (sekunteina):"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:944
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:994
+msgid "Timeout for disabling updates to inactive user (seconds):"
+msgstr "Aika jonka jälkeen uusien päivitysten lähettäminen poissaoleville käyttäjille lopetetaan (sekunteina):"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:808
+msgid "Donate"
+msgstr "Lahjoita"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:816
+msgid "Settings"
+msgstr "Asetukset"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1086
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1152
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1158
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1164
+msgid "Show"
+msgstr "Näytä"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/widgets.php:13
+msgid "Quick Chat is quick and elegant WordPress chat plugin that does not waste your bandwidth."
+msgstr "Quick Chat on nopea ja hyvä WordPress chat-lisäosa joka ei tuhlaa kaistanleveyttä."
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:105
+msgid "Guest_"
+msgstr "Vierailija_"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:351
+msgid "You're about to permanently delete all messages from all private chat rooms as well as old private chat invitations. Are you sure?"
+msgstr "Olet aikeissa poistaa lopullisesti kaikki viestit kaikista yksityisistä chat-huoneista sekä kaikki vanhat yksityisten chat-huoneiden kutsut. Oletko varma?"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:695
+msgid "Unfortunately you do not have the authority to initiate private chat"
+msgstr "Valitettavasti sinulla ei ole oikeutta aloittaa yksityistä chattiä"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:696
+msgid "You must select at least one message"
+msgstr "Sinun täytyy valita vähintää yksi viesti"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:697
+msgid "Are you sure you want to permanently delete selected messages?"
+msgstr "Oletko varma että haluat lopullisesti poistaa valitsemasi viestit?"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:698
+msgid "Are you sure you want to permanently delete all except the latest %s messages?"
+msgstr "Oletko varma että haluat poistaa kaikki paitsi %s uusinta viestiä?"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:699
+msgid "You must select at least one user"
+msgstr "Sinun pitää valita vähintään yksi käyttäjä"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:700
+msgid "Are you sure you want to add selected users to your Quick Chat admin options IP blocklist?"
+msgstr "Oletko varma että haluat lisätä valitut käyttäjät sinun Quick Chat IP-estolistalle?"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:701
+msgid "Reply to %s"
+msgstr "Vastaa käyttäjälle %s"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:702
+msgid "Already taken!"
+msgstr "Varattu!"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:703
+msgid "Not allowed!"
+msgstr "Ei sallittua!"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:704
+msgid "Illegal characters!"
+msgstr "Kiellettyjä kirjaimia!"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:705
+msgid "Profanity!"
+msgstr "Kiellettyä kielenkäyttöä!"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:706
+msgid "%s invites you to private chat. To start private chat you can click his user name on the user list."
+msgstr "%s on kutsunut sinut yksityiseen chat-huoneeseen. Aloittaaksesi yksityisen chatin voit painaa hänen käyttäjänimeä chat-huoneessa olevien listalta."
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:707
+msgid "Your private chat invitation has been sent to %s."
+msgstr "Yksityinen chat-pyyntö on lähetetty käyttäjälle %s."
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:708
+msgid "Private chat"
+msgstr "Yksityinen chat"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:709
+msgid "Notice"
+msgstr "Huomautus"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:710
+msgid "Start private chat with %s"
+msgstr "Aloita yksityinen chat käyttäjän %s kanssa"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:711
+msgid "Close this private chat"
+msgstr "Sulje tämä yksityinen chatti"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:712
+msgid "Minimize this private chat"
+msgstr "Pienennä tämä yksityinen chatti"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:713
+msgid "Restore this private chat"
+msgstr "Palauta tämä yksityinen chatti"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:714
+msgid "You're about to send private chat invitation to %s. Are you sure?"
+msgstr "Olet aikeissa lähettää yksityisen chat-kutsun käyttäjälle %s. Oletko varma että haluat tehdä tämän?"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:715
+msgid "You're about to accept private chat invitation from %s. Are you sure?"
+msgstr "Olet aikeissa hyväksyä yksityisen chat-kutsun käyttäjältä %s. Oletko varma että haluat tehdä tämän?"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:720
+msgid "Fetch this chat room transcript"
+msgstr "Haen tämän chat-huoneen pöytäkirja"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:721
+msgid "Transcript"
+msgstr "Käsikirjoitus"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:717
+msgid "Checking..."
+msgstr "Tarkistetaan..."
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:964
+msgid "Donating or getting help"
+msgstr "Lahjoittaminen tai avun haku"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:965
+msgid "General options"
+msgstr "Yleiset asetukset"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:966
+msgid "Private chat options"
+msgstr "Yksityishuoneiden asetukset"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:967
+msgid "Filter options"
+msgstr "Suodatus asetukset"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:968
+msgid "Security options"
+msgstr "Turvallisuus asetukset"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:969
+msgid "Appearance options"
+msgstr "Ulkoasu asetukset"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:971
+msgid "Debug mode (enable only when debugging):"
+msgstr "Testaustila (käytä vain testatessasi)"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:972
+msgid "Incoming message sound notification on by default:"
+msgstr "Tulevien viestin äänimerkki asetettuna päälle oletuksena:"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:974
+msgid "Chat name prefix for guest users:"
+msgstr "Chat-nimien alku vierailijoille:"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:891
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:975
+msgid "Maximum number of digits for random guests chat user name suffix:"
+msgstr "Suurin mahdollinen määrä numeroita vierailijan nimen lopussa:"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:933
+msgid "Clean button will delete messages older than following number of messages per chat room:"
+msgstr "Puhdistus nappi poistaa viestit jotka ovat vanhempia kuin määrittämäsi viestien määrä:"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:980
+msgid "Convert URLs to hyperlinks:"
+msgstr "Muuta URL:t hyperlinkeiksi:"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:981
+msgid "Disallow using special characters inside chat user names (including special locale characters):"
+msgstr "Poista käytöstä erikoismerkkien käyttö käyttäjänimissä (estää myös ä,ö,å käytön):"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:982
+msgid "Filter bad words contained inside other words:"
+msgstr "Suodata kirosanat jotka ovat toisten sanojen sisällä:"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:983
+msgid "Bad words list (comma separated):"
+msgstr "Kirosanalista (erottele pilkulla):"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:985
+msgid "Logged in users can initiate private chat:"
+msgstr "Kirjautuneet käyttäjät voivat aloittaa yksityisiä chat-keskusteluita:"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:986
+msgid "Guest users can initiate private chat:"
+msgstr "Vierailijat voivat aloittaa yksityisiä chat-keskusteluita:"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:991
+msgid "Only logged in users can participate in chat:"
+msgstr "Vain kirjautuneet käyttäjät voivat osallistua chat-keskusteluun:"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:992
+msgid "Protect registered users user names from being used by other users:"
+msgstr "Suojele rekisteröityneiden käyttäjien käyttäjänimiä muilta käyttäjiltä:"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:993
+msgid "Allow users to change their chat user name:"
+msgstr "Salli käyttäjien muuttaa heidän chat-nimeä:"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:911
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:995
+msgid "Maximum number of characters for each message:"
+msgstr "Korkein sallittu kirjainten määrä viesteissä:"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:996
+msgid "Restricted chat user names list (comma separated):"
+msgstr "Ylläpidolle varatut chatin käyttäjänimet (erottele pilkulla):"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:997
+msgid "Deny chat access to the following IP addresses (comma separated):"
+msgstr "Kiellä chat pääsy seuraaville IP-osotteille (erottele pilkulla):"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1000
+msgid "Hide Quick Chat sidebar widget on pages where same chat room is embedded using shortcode:"
+msgstr "Piilota Quick Chat sivupalkin vimpain sivuilta jossa on jo jokin chat-huone liitettynä käyttäen lyhennyskoodia:"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1001
+msgid "Hide \"Powered by Quick Chat\" link (big thanks for not hiding it):"
+msgstr "Piilota \"Palvelun tarjoaa Quick Chat\" linkki (kiitos paljon jos et piilota sitä):"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:900
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1002
+msgid "Manual timestamp offset when displaying messages (+/- hours):"
+msgstr "Manuaalinen aikaeron korjaus viesteille (+/- tuntia):"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:922
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1003
+msgid "User avatar size (pixels):"
+msgstr "Käyttäjän avatar-kuvan koko (pikseleitä):"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1004
+msgid "Advertisement code for your AdSense or other ads placed between chat user name input box and message text input box:"
+msgstr "Mainostuskoodi sinun AdSense tai jollekin muulle mainokselle joka sijoitetaan käyttäjänimi laatikon ja viestilaatikon väliin."
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1006
+msgid "Donate using PayPal (sincere thank you for your help):"
+msgstr "Lahjoita käyttäen PayPalia (paljon kiitoksia lahjoituksistasi):"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1007
+msgid "Quick Chat version:"
+msgstr "Quick Chat versio:"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1008
+msgid "Quick Chat FAQ:"
+msgstr "Quick Chat FAQ:"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1009
+msgid "Quick Chat changelog:"
+msgstr "Quick Chat muutoslogi"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1010
+msgid "Quick Chat support page:"
+msgstr "Quick Chat tukisivusto:"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:824
+msgid "options page"
+msgstr "Asetukset sivu"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1015
+msgid "If you find Quick Chat useful you can donate to help it's development. Also you can get help with Quick Chat:"
+msgstr "Jos löydät Quick Chatin hyödylliseksi voit lahjoittaa rahaa sen parantamiseksi. Voit myös saada apua Quick Chatin avulla:"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1021
+msgid "Here you can control all general options:"
+msgstr "Tässä voit hallita kaikkia yleisiä asetuksia:"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1027
+msgid "Here you can control all private chat options:"
+msgstr "Tässä voit hallita yksityisviestien asetuksia:"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1033
+msgid "Here you can control Quick Chat message and chat user names filter:"
+msgstr "Tässä voit hallita Quick Chatin viestien ja käyttäjänimien filtteriä:"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1039
+msgid "In this section you can control security options:"
+msgstr "Tässä osiossa voit hallita turvallisuus asetuksia:"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1045
+msgid "Here are the Quick Chat appearance options:"
+msgstr "Tässä on Quick Chatin ulkoasu valinnat:"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1058
+msgid "FAQ"
+msgstr "FAQ"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1066
+msgid "Changelog"
+msgstr "Muutoslogi"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1070
+msgid "Quick Chat at TechyTalk.info"
+msgstr "Quick Chat TechyTalk.info sivuilla"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1300
+msgid "Quick Chat Admin's Lounge"
+msgstr "Quick Chat valvojien aula"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:718
+msgid "Add this user's IP address to your IP block list"
+msgstr "Lisää tämän käyttäjän IP-osoite sinun porttikiellossa olevien IP-listaan"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:719
+msgid "Ban"
+msgstr "Porttikielto"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:722
+msgid "Select/deselect all messages toggle"
+msgstr "Valitse/älä valitse kaikkien viestin tilan muuttaminen"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:723
+msgid "Toggle"
+msgstr "Muuta tila"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:724
+msgid "Delete selected messages"
+msgstr "Poista valitut viestit"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:725
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1204
+msgid "Delete"
+msgstr "Poista"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:726
+msgid "Clean all except the latest %s messages"
+msgstr "Puhdista kaikki paitsi %s viimeisintä viestiä."
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:727
+msgid "Clean"
+msgstr "Puhdista"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:728
+msgid "Enable/disable auto scroll when new message arrives"
+msgstr "Ota käyttöön/poista käytöstä automaattinen rullaus uusien viestin saapuessa"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:729
+msgid "Scroll"
+msgstr "Rullaa"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:730
+msgid "Enable/disable sound notification when new message arrives"
+msgstr "Ota käyttöön/poista käytöstä ääni huomautukset uuden viestin saapuessa."
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:731
+msgid "Sound"
+msgstr "Ääni"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:733
+msgid "You must login if you want to participate in chat."
+msgstr "Sinun täytyy kirjautua sisään osallistuaksesi keskusteluun."
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:734
+msgid "Send"
+msgstr "Lähetä"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1312
+msgid "Powered by Quick Chat"
+msgstr "Palvelun tarjoaa Quick Chat"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/widgets.php:23
+msgid "Title"
+msgstr "Otsikko"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/widgets.php:28
+msgid "Chat room name:"
+msgstr "Chat-huoneen nimi"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/widgets.php:33
+msgid "Message container height:"
+msgstr "Viestilaatikon korkeus"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/widgets.php:39
+msgid "Include user list:"
+msgstr "Lisää käyttäjälista"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/widgets.php:45
+msgid "User list position:"
+msgstr "Käyttäjälistan sijainti"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/widgets.php:54
+msgid "Visible to logged in users:"
+msgstr "Nähtävillä kirjautuneille käyttäjille"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/widgets.php:60
+msgid "Visible to guest users:"
+msgstr "Nähtävillä vierailijoille"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/widgets.php:66
+msgid "Include avatars:"
+msgstr "Lisää avatarit"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/widgets.php:72
+msgid "Include smilies container:"
+msgstr "Lisää hymiö laatikko"
+
+#: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/widgets.php:78
+msgid "Include send button:"
+msgstr "Lisää lähetä nappi"
+

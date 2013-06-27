@@ -1,0 +1,191 @@
+/* Quick Chat 4.11 */
+/* Global smilies CSS sprites */
+div.quick-chat-smile{margin:0; padding: 0; width: 16px; height: 16px; background: url(../img/quick-chat-smile.png) no-repeat top left; display: -moz-inline-stack; display:inline-block;}
+div.quick-chat-smile-angel{background-position: 0 0;}
+div.quick-chat-smile-confused{background-position: 0 -17px;}
+div.quick-chat-smile-cool{background-position: 0 -34px;}
+div.quick-chat-smile-crying{background-position: 0 -51px;}
+div.quick-chat-smile-devilish{background-position: 0 -68px;}
+div.quick-chat-smile-eek{background-position: 0 -85px;}
+div.quick-chat-smile-error{background-position: 0 -102px;}
+div.quick-chat-smile-favorite{background-position: 0 -119px;}
+div.quick-chat-smile-glasses{background-position: 0 -136px;}
+div.quick-chat-smile-grin{background-position: 0 -153px;}
+div.quick-chat-smile-help{background-position: 0 -170px;}
+div.quick-chat-smile-idea{background-position: 0 -187px;}
+div.quick-chat-smile-important{background-position: 0 -204px;}
+div.quick-chat-smile-kiss{background-position: 0 -221px;}
+div.quick-chat-smile-monkey{background-position: 0 -238px;}
+div.quick-chat-smile-plain{background-position: 0 -255px;}
+div.quick-chat-smile-razz{background-position: 0 -272px;}
+div.quick-chat-smile-sad{background-position: 0 -289px;}
+div.quick-chat-smile-smile-big{background-position: 0 -306px;}
+div.quick-chat-smile-smile{background-position: 0 -323px;}
+div.quick-chat-smile-surprise{background-position: 0 -340px;}
+div.quick-chat-smile-warning{background-position: 0 -357px;}
+div.quick-chat-smile-wink{background-position: 0 -374px;}
+
+/* Quick Chat container */
+div.quick-chat-container{margin: 0; padding: 0;}
+
+/* Quick Chat container for private chat */
+div.quick-chat-container-private{position: fixed; bottom: 0; right: 0; z-index:10000; margin:0; padding: 2px; width: 250px; background-color: #FFF; border: 1px solid #CCC; padding: 4px; -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px;}
+
+/* Quick Chat private chat titlebar */
+div.quick-chat-container-private-titlebar{border-bottom: 1px solid #CCC; margin: 0; padding: 0 4px;}
+
+/* Quick Chat private chat title */
+div.quick-chat-container-private-title{float: left;}
+
+/* Quick Chat private chat close button */
+div.quick-chat-container-private-close, div.quick-chat-container-private-minimize-restore{padding-left: 8px; float: right;}
+
+/* Hide admin select checkboxes (messages, users) in private chat */
+div.quick-chat-container-private input.quick-chat-to-delete-boxes, div.quick-chat-container-private input.quick-chat-to-ban-boxes{display: none;}
+
+/* Messages container */
+div.quick-chat-history-container{overflow-y:auto; overflow-x:hidden; margin: 0; padding: 0 4px 0 4px;}
+
+/* User list container */
+div.quick-chat-users-container{padding: 0 4px 0 4px;}
+
+/* User name inside user list, applies to left, right and top */
+div.quick-chat-single-user{font-weight: bold;}
+
+/* User list container for left and right user lists */
+div.quick-chat-users-container-left, div.quick-chat-users-container-right{min-width: 100px; max-width:140px; overflow-y:auto; overflow-x:hidden; }
+
+/* User list container for right user list */
+div.quick-chat-users-container-right{float:right; margin: 0 0 0 8px; }
+
+/* User list container for left user list */
+div.quick-chat-users-container-left{float:left; margin: 0 8px 0 0; }
+
+/* User list container for top user list */
+div.quick-chat-users-container-top{width: 100%; box-sizing: border-box; -webkit-box-sizing:border-box; -moz-box-sizing: border-box; margin: 0 0 8px 0;}
+
+/* User name inside top user list */
+div.quick-chat-users-container-top div.quick-chat-single-user{display: -moz-inline-stack; display:inline-block; margin-right: 1px;}
+
+/* Single message container */
+div.quick-chat-history-message-alias-container{margin: 0 0 8px 0;}
+
+/* Single message container top part with message authors gravatar, user name and message timestring */
+div.quick-chat-history-header{margin: 0;}
+
+/* Message author gravatar */
+div.quick-chat-history-message-alias-container div.quick-chat-history-header img.avatar{float:left; margin: 0 8px 0 0; padding: 0; border: 0 none;}
+
+/* Message author alias, applies to all messages */
+div.quick-chat-history-alias{font-weight: bold; line-height: 18px; margin-right:4px;}
+
+/* Message links container */
+div.quick-chat-history-links{line-height: 18px; font-size: 90%;}
+
+/* Message checkboxes (admin users) */
+input.quick-chat-to-delete-boxes{float:right; margin: 0 4px; padding: 0;}
+
+/* Message time, applies to all messages */
+div.quick-chat-history-timestring{font-style:italic; margin: 0; padding: 0;}
+
+/* Message text, applies to all messages */
+div.quick-chat-history-message{line-height: 20px; word-wrap: break-word;}
+
+/* Message author alias inside message history and users list (admin users) */
+div.quick-chat-users-container div.quick-chat-admin, div.quick-chat-users-container div.quick-chat-admin a,
+div.quick-chat-admin div.quick-chat-history-alias, div.quick-chat-admin div.quick-chat-history-alias a { color: red;}
+
+/* Message time (admin users) */
+div.quick-chat-admin div.quick-chat-history-timestring{}
+
+/* Message text (admin users) */
+div.quick-chat-admin div.quick-chat-history-message{}
+
+/* Message author alias insided message history and users list (loggedin users) */
+div.quick-chat-users-container div.quick-chat-loggedin, div.quick-chat-users-container div.quick-chat-loggedin a,
+div.quick-chat-loggedin div.quick-chat-history-alias, div.quick-chat-loggedin div.quick-chat-history-alias a{color: #008800;}
+
+/* Message time (loggedin users) */
+div.quick-chat-loggedin div.quick-chat-history-timestring{}
+
+/* Message text (loggedin users) */
+div.quick-chat-loggedin div.quick-chat-history-message{}
+
+/* Message author alias inside message history and users list (guest users) */
+div.quick-chat-users-container div.quick-chat-guest, div.quick-chat-users-container div.quick-chat-guest a,
+div.quick-chat-guest div.quick-chat-history-alias, div.quick-chat-guest div.quick-chat-history-alias a{color: #1982D1;}
+
+/* Message time (guest users) */
+div.quick-chat-guest div.quick-chat-history-timestring{}
+
+/* Message text (guest users) */
+div.quick-chat-guest div.quick-chat-history-message{}
+
+/* Message author alias inside message history and users list (system notices) */
+div.quick-chat-notice div.quick-chat-history-alias{color: #000;}
+
+/* Message time (system notices) */
+div.quick-chat-notice div.quick-chat-history-timestring{}
+
+/* Message text (system notices) */
+div.quick-chat-notice div.quick-chat-history-message{}
+
+/* User select checkboxes (admin users) */
+input.quick-chat-to-ban-boxes{margin:0 4px 0 0; padding:0;}
+
+/* Bottom control links container */
+div.quick-chat-links{margin: 8px 0 0 0; padding: 0; line-height: 100%; font-size: 90%;}
+
+/* Remove underline from links inside bottom control links */
+div.quick-chat-container a, div.quick-chat-container a:hover{text-decoration: none;}
+
+/* Bottom control links - left floted */
+div.quick-chat-left-link{float: left; margin-right: 4px;}
+
+/* Bottom control links - right floated */
+div.quick-chat-right-link{float: right; margin-left: 4px;}
+
+/* Notices informing users they must login/are banned from chat */
+div.quick-chat-bootom-notice{}
+
+/* Message author alias input box container */
+div.quick-chat-alias-container{ margin: 8px 0 0 0}
+
+/* Message author alias input box */
+input.quick-chat-alias{width: 100px; height: 20px; line-height: 20px; display: inline;}
+
+/* Right margin on under the chat history elements */
+input.quick-chat-alias, span.quick-chat-username-status, span.quick-chat-language-container, span.quick-chat-counter {margin: 0 8px 0 0;}
+
+/* User name checking text (normal, error), keyup counter (normal, exceeded, warning) */
+span.quick-chat-error, span.quick-chat-counter{font-weight:bold;}
+span.quick-chat-counter{color:#CCC;}
+span.quick-chat-error, span.quick-chat-exceeded {color: #E00;}
+span.quick-chat-warning {color: #600;}
+
+/* AdSense content */
+div.quick-chat-adsense{margin: 8px 0;}
+
+/* Send message button */
+input.quick-chat-send-button{display: block; margin: 8px 0 0 0; width: 100%; height: 100%; box-sizing: border-box; -webkit-box-sizing:border-box; -moz-box-sizing: border-box;}
+
+/* Textarea for message text */
+textarea.quick-chat-message{display: block; margin: 8px 0 0 0; width: 100%; height: 80px; resize: vertical; box-sizing: border-box; -webkit-box-sizing:border-box; -moz-box-sizing: border-box;}
+
+/* Smilies container */
+div.quick-chat-smilies-container{margin: 8px 0 0 0;}
+
+/* Smilie inside smilies containter */
+div.quick-chat-smile-container{float: left; margin: 0 2px;}
+
+/* "Powered by Quick Chat" link */
+div.quick-chat-linkhome{font-style: italic; font-size: 90%; margin-top: 2px;}
+
+/* Initally hide all textarea elements in admin options */
+textarea.quick-chat-show-hide{display: none;}
+
+/* Floats clearing code */
+div.quick-chat-top:after, div.quick-chat-history-links:after, div.quick-chat-container-private-titlebar:after, div.quick-chat-history-header:after, div.quick-chat-smilies-container:after, div.quick-chat-links:after { content: ".";  display: block; height: 0; clear: both; visibility: hidden; }
+div.quick-chat-top, div.quick-chat-history-links, div.quick-chat-container-private-titlebar, div.quick-chat-history-header, div.quick-chat-smilies-container, div.quick-chat-links {display: inline-block;}
+* html div.quick-chat-top, * html div.quick-chat-history-links, * html div.quick-chat-container-private-titlebar, * html div.quick-chat-history-header, * html div.quick-chat-smilies-container, * html div.quick-chat-links {height: 1%;}
+div.quick-chat-top, div.quick-chat-history-links, div.quick-chat-container-private-titlebar, div.quick-chat-history-header, div.quick-chat-smilies-container, div.quick-chat-links {display: block;}
