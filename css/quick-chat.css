@@ -1,4 +1,4 @@
-/* Quick Chat 4.11 */
+/* Quick Chat 4.13 */
 /* Global smilies CSS sprites */
 div.quick-chat-smile{margin:0; padding: 0; width: 16px; height: 16px; background: url(../img/quick-chat-smile.png) no-repeat top left; display: -moz-inline-stack; display:inline-block;}
 div.quick-chat-smile-angel{background-position: 0 0;}
@@ -152,7 +152,7 @@ div.quick-chat-bootom-notice{}
 div.quick-chat-alias-container{ margin: 8px 0 0 0}
 
 /* Message author alias input box */
-input.quick-chat-alias{width: 100px; height: 20px; line-height: 20px; display: inline;}
+input.quick-chat-alias{width: 100px; display: inline;}
 
 /* Right margin on under the chat history elements */
 input.quick-chat-alias, span.quick-chat-username-status, span.quick-chat-language-container, span.quick-chat-counter {margin: 0 8px 0 0;}

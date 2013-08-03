@@ -2,16 +2,13 @@
 # This file is distributed under the same license as the Quick Chat package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2012-12-16 22:05+0100\n"
+"PO-Revision-Date: 2013-08-03 22:45:40+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/0.1\n"
 "Project-Id-Version: Quick Chat\n"
-"POT-Creation-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1308
 msgid "LOADING..."
@@ -133,7 +130,7 @@ msgstr "Hiermit werden alle Einladungen und Nachrichten aus allen privaten Chats
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:695
 msgid "Unfortunately you do not have the authority to initiate private chat"
-msgstr ""
+msgstr "Sie haben nicht die Berechtigung ein privat Chat einzurichten."
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:696
 msgid "You must select at least one message"
@@ -507,4 +504,3 @@ msgstr ""
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/widgets.php:78
 msgid "Include send button:"
 msgstr "Senden-Button anzeigen:"
-

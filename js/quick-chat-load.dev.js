@@ -1,4 +1,4 @@
-// Quick Chat 4.12 - load
+// Quick Chat 4.13 - load
 var quick_chat = jQuery.extend(quick_chat || {}, {
     script_suffix: (quick_chat.debug_mode == 1) ? '.dev' : '',
     private_current_name: 'quick_chat_private_current_'+quick_chat.user_id,
@@ -19,7 +19,7 @@ var quick_chat = jQuery.extend(quick_chat || {}, {
     }
 });
 
-if (jQuery.browser.webkit) {
+if (/(chrome|webkit)[ \/]([\w.]+)/.test(window.navigator.userAgent.toLowerCase())) {
     // Webkit bug workaround: http://code.google.com/p/chromium/issues/detail?id=41726
     jQuery(window).load(quick_chat.load());
 }else{

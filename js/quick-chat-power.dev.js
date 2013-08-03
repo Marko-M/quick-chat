@@ -1,4 +1,4 @@
-// Quick Chat 4.12 - power
+// Quick Chat 4.13 - power
 var quick_chat = jQuery.extend(quick_chat || {}, {
     toggle: false,
     delete_messages: function(chat_id, to_delete_ids){
@@ -70,7 +70,7 @@ var quick_chat = jQuery.extend(quick_chat || {}, {
     }
 });
 
-jQuery("div.quick-chat-delete-link a").bind('click', function(e) {
+jQuery("div.quick-chat-delete-link a").on('click', function(e) {
     e.preventDefault();
 
     var chat_id = jQuery(this).parents('.quick-chat-container').attr('data-quick-chat-id');
@@ -93,7 +93,7 @@ jQuery("div.quick-chat-delete-link a").bind('click', function(e) {
     });
 });
 
-jQuery("div.quick-chat-clean-link a").bind('click', function(e) {
+jQuery("div.quick-chat-clean-link a").on('click', function(e) {
     e.preventDefault();
 
     var chat_id = jQuery(this).parents('.quick-chat-container').attr('data-quick-chat-id');
@@ -107,7 +107,7 @@ jQuery("div.quick-chat-clean-link a").bind('click', function(e) {
     });
 });
 
-jQuery("div.quick-chat-ban-link a").bind('click', function(e) {
+jQuery("div.quick-chat-ban-link a").on('click', function(e) {
     e.preventDefault();
 
     var chat_id = jQuery(this).parents('.quick-chat-container').attr('data-quick-chat-id');
@@ -130,7 +130,7 @@ jQuery("div.quick-chat-ban-link a").bind('click', function(e) {
     });
 });
 
-jQuery("div.quick-chat-transcript-link a").live('click', function(e) {
+jQuery(document).on('click', "div.quick-chat-transcript-link a", function(e) {
     e.preventDefault();
 
     var chat_id = jQuery(this).parents('.quick-chat-container').attr('data-quick-chat-id');
@@ -142,12 +142,12 @@ jQuery("div.quick-chat-transcript-link a").live('click', function(e) {
     });
 });
 
-jQuery("div.quick-chat-select-all-link a").bind('click', function(e){
+jQuery("div.quick-chat-select-all-link a").on('click', function(e){
     e.preventDefault();
     var this_element = jQuery(this);
 
     jQuery(this).fadeTo(100, 0, function() {
-        jQuery(this_element).parents('.quick-chat-container').find('.quick-chat-history-container input[type=checkbox]').attr('checked',!quick_chat.toggle);
+        jQuery(this_element).parents('.quick-chat-container').find('.quick-chat-history-container input[type=checkbox]').prop('checked',!quick_chat.toggle);
         quick_chat.toggle = !quick_chat.toggle;
         jQuery(this_element).fadeTo(100, 1);
     });

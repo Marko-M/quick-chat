@@ -2,16 +2,13 @@
 # This file is distributed under the same license as the Quick Chat package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2012-12-16 22:05+0100\n"
+"PO-Revision-Date: 2013-08-03 22:42:47+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/0.1\n"
 "Project-Id-Version: Quick Chat\n"
-"POT-Creation-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1308
 msgid "LOADING..."
@@ -19,7 +16,7 @@ msgstr "LADDAR..."
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1260
 msgid "For displaying country flags on user list %s requires free WordPress plugin %s version %s or later installed, activated and %s support in %s settings not disabled | %s | %s"
-msgstr ""
+msgstr "För att visa landsflaggor i användarlistan %s behöver WordPress pluginet %s version %s eller nyare vara installerad, aktiverad och ha stöd för %s under %s inställningar ej inaktiverat | %s | %s"
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:973
 msgid "Do automatic daily cleanup to delete messages older than target number of messages:"
@@ -79,7 +76,7 @@ msgstr "Måste vara ett heltal med ett värde på %d eller högre."
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:990
 msgid "WordPress user roles allowed to access moderation tools:"
-msgstr ""
+msgstr "WordPress användarroller med behörighet att använda modereringsverktyg:"
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/widgets.php:84
 msgid "Include counter:"
@@ -507,4 +504,3 @@ msgstr "Inkludera smilies:"
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/widgets.php:78
 msgid "Include send button:"
 msgstr "Inkludera skicka-knapp:"
-

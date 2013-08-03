@@ -1,4 +1,4 @@
-// Quick Chat 4.12 - init
+// Quick Chat 4.13 - init
 var quick_chat = jQuery.extend(quick_chat || {}, {
     data: []
 });

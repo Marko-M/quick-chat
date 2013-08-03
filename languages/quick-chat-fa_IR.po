@@ -2,126 +2,123 @@
 # This file is distributed under the same license as the Quick Chat package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2012-12-16 22:05+0100\n"
+"PO-Revision-Date: 2013-08-03 22:40:33+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: GlotPress/0.1\n"
 "Project-Id-Version: Quick Chat\n"
-"POT-Creation-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1308
 msgid "LOADING..."
-msgstr ""
+msgstr "دارد بارگذاری می‌شود..."
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1260
 msgid "For displaying country flags on user list %s requires free WordPress plugin %s version %s or later installed, activated and %s support in %s settings not disabled | %s | %s"
-msgstr ""
+msgstr "برای نمایش پرچم کشور در فهرست کاربران٬ %s نیازمند افزونهٔ بهره-آزاد %s در نگارش %s یا بالاتر است که نصب شده باشد. همچنین %s نباید از %s ناکار شده باشد | %s | %s"
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:973
 msgid "Do automatic daily cleanup to delete messages older than target number of messages:"
-msgstr ""
+msgstr "پاک کردن خودکار پیامها پس از گذشتن شمار روزهایی که مشخص می‌شود"
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:978
 msgid "Target number of messages for automatic daily cleanup and chat interface \"Clean\" button:"
-msgstr ""
+msgstr "مشخ کردن شمار روزها برای پاکسازی خودکار پیامها از میانروی گپ \"پاک‌سازی\" ذعففخد:"
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:987
 msgid "Automatically delete all messages from all private chat rooms as well as old private chat invitations daily:"
-msgstr ""
+msgstr "پاک کردن خودکار روزانهٔ پیامهای درون اتاقهای خصوصی گپ به همان سان که در دعوت به گپ خصوصی کهنه انجام میپذیرد."
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:988
 msgid "Delete all messages from all private chat rooms as well as old private chat invitations now:"
-msgstr ""
+msgstr "پاک کردن پیامهای درون اتاقهای خصوصی گپ به همان سان که در دعوت به گپ خصوصی کهنه انجام میپذیرد."
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:999
 msgid "Disable %s integration (to hide country flags on user list):"
-msgstr ""
+msgstr "%s را برای نشان داده نشدن پرچم کشورها در فهرست کاربران٬ ناکار کنید"
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1266
 msgid "More"
-msgstr "ادامه"
+msgstr "بیشتر"
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1267
 msgid "Dismiss"
-msgstr "پنهان کن"
+msgstr "پنهاندن"
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:352
 msgid "Done"
-msgstr "تائید"
+msgstr "انجام شد"
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:732
 msgid "You're banned from chat."
-msgstr "شما بلوکه شده اید"
+msgstr "از گپ شما جلوگیری شده است."
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:864
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:875
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:934
 msgid "Must be positive integer."
-msgstr ""
+msgstr "باید عدد صحیح مثبت باشد"
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:892
 msgid "Must be positive integer less than %d."
-msgstr ""
+msgstr "باید عدد صحیح مثبت کوچکتر از %d باشد."
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:901
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:923
 msgid "Must be integer with value between %d and %d."
-msgstr ""
+msgstr "باید عدد صحیح مثبت میان %d و %d باشد."
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:912
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:945
 msgid "Must be positive integer with value %d or greater."
-msgstr ""
+msgstr "باید عدد صحیح مثبت %d یا بزرگ‌تر از آن باشد."
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:990
 msgid "WordPress user roles allowed to access moderation tools:"
-msgstr ""
+msgstr "گروه‌های کاربری وردپرسی مجاز برای دسترسی به ابزار گردانندگی"
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/widgets.php:84
 msgid "Include counter:"
-msgstr "پرچم ها را نشان بده"
+msgstr "در بر گرفتن شمارنده:"
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:716
 msgid "You've been dropped out of chat due to long period of inactivity. To continue with chat please refresh this page."
-msgstr ""
+msgstr "چون مدت زیادی است که کاری نکرده اید٬ از گپ بیرون افتاده اید. برای از سر گرفتن گپ٬ این برگه را نوسازی کنید."
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:863
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:976
 msgid "Interval for refreshing list of online users (seconds):"
-msgstr ""
+msgstr "روزامد‌سازی فهرست کاربران آنلاین (بر پایهٔ ثانیه):"
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:874
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:977
 msgid "Interval for refreshing list of messages (seconds):"
-msgstr ""
+msgstr "روزامد‌سازی فهرست پیام‌ها (بر پایهٔ ثانیه):"
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:944
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:994
 msgid "Timeout for disabling updates to inactive user (seconds):"
-msgstr ""
+msgstr "درازای زمانی که اگر کاربر غیر فعال باشد٬ روزامدها برایش نشان داده نشود (بر پایهٔ ثانیه):"
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:808
 msgid "Donate"
-msgstr ""
+msgstr "کمک مالی"
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:816
 msgid "Settings"
-msgstr ""
+msgstr "تنظیمات"
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1086
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1152
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1158
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:1164
 msgid "Show"
-msgstr ""
+msgstr "نشان دادن"
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/widgets.php:13
 msgid "Quick Chat is quick and elegant WordPress chat plugin that does not waste your bandwidth."
-msgstr ""
+msgstr "Quick Chat افزونه ای تند‌کار و عالی مختصر و مفید برای وردپرس است که پهنای باند را هم زیاد مصرف نمی‌کند."
 
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/quick-chat.php:105
 msgid "Guest_"
@@ -507,4 +504,3 @@ msgstr ""
 #: /home/marko/public_html/wordpress/wp-content/plugins/quick-chat/widgets.php:78
 msgid "Include send button:"
 msgstr ""
-
