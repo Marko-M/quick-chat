@@ -4,7 +4,7 @@ Plugin Name: Quick Chat
 Plugin URI: http://www.techytalk.info/wordpress-plugins/quick-chat/
 Description: Self hosted WordPress chat plugin supporting private chat, chat rooms, avatars, user list, words filtering, smilies, caching plugins and more.
 Author: Marko Martinović
-Version: 4.12
+Version: 4.13
 Author URI: http://www.techytalk.info
 License: GPL2
 
@@ -25,7 +25,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
 class Quick_Chat {
-    const version = '4.12';
+    const version = '4.13';
     const default_db_version = '26';
     const default_badwords_list = '4r5e, 5h1t, 5hit, a55, anal, anus, ar5e, arrse, arse, ass, ass-fucker, asses, assfucker, assfukka, asshole, assholes, asswhole, a_s_s, b!tch, b00bs, b17ch, b1tch, ballbag, balls, ballsack, bastard, beastial, beastiality, bellend, bestial, bestiality, bi+ch, biatch, bitch, bitcher, bitchers, bitches, bitchin, bitching, bloody, blow job, blowjob, blowjobs, boiolas, bollock, bollok, boner, boob, boobs, booobs, boooobs, booooobs, booooooobs, breasts, buceta, bugger, bum, bunny fucker, butt, butthole, buttmuch, buttplug, c0ck, c0cksucker, carpet muncher, cawk, chink, cipa, cl1t, clit, clitoris, clits, cnut, cock, cock-sucker, cockface, cockhead, cockmunch, cockmuncher, cocks, cocksuck , cocksucked , cocksucker, cocksucking, cocksucks , cocksuka, cocksukka, cok, cokmuncher, coksucka, coon, cox, crap, cum, cummer, cumming, cums, cumshot, cunilingus, cunillingus, cunnilingus, cunt, cuntlick , cuntlicker , cuntlicking , cunts, cyalis, cyberfuc, cyberfuck , cyberfucked , cyberfucker, cyberfuckers, cyberfucking , d1ck, damn, dick, dickhead, dildo, dildos, dink, dinks, dirsa, dlck, dog-fucker, doggin, dogging, donkeyribber, doosh, duche, dyke, ejaculate, ejaculated, ejaculates , ejaculating , ejaculatings, ejaculation, ejakulate, f u c k, f u c k e r, f4nny, fag, fagging, faggitt, faggot, faggs, fagot, fagots, fags, fanny, fannyflaps, fannyfucker, fanyy, fatass, fcuk, fcuker, fcuking, feck, fecker, felching, fellate, fellatio, fingerfuck , fingerfucked , fingerfucker , fingerfuckers, fingerfucking , fingerfucks , fistfuck, fistfucked , fistfucker , fistfuckers , fistfucking , fistfuckings , fistfucks , flange, fook, fooker, fuck, fucka, fucked, fucker, fuckers, fuckhead, fuckheads, fuckin, fucking, fuckings, fuckingshitmotherfucker, fuckme , fucks, fuckwhit, fuckwit, fudge packer, fudgepacker, fuk, fuker, fukker, fukkin, fuks, fukwhit, fukwit, fux, fux0r, f_u_c_k, gangbang, gangbanged , gangbangs , gaylord, gaysex, goatse, God, god-dam, god-damned, goddamn, goddamned, hardcoresex , hell, heshe, hoar, hoare, hoer, homo, hore, horniest, horny, hotsex, jack-off , jackoff, jap, jerk-off , jism, jiz , jizm , jizz, kawk, knob, knobead, knobed, knobend, knobhead, knobjocky, knobjokey, kock, kondum, kondums, kum, kummer, kumming, kums, kunilingus, l3i+ch, l3itch, labia, lmfao, lust, lusting, m0f0, m0fo, m45terbate, ma5terb8, ma5terbate, masochist, master-bate, masterb8, masterbat*, masterbat3, masterbate, masterbation, masterbations, masturbate, mo-fo, mof0, mofo, mothafuck, mothafucka, mothafuckas, mothafuckaz, mothafucked , mothafucker, mothafuckers, mothafuckin, mothafucking , mothafuckings, mothafucks, mother fucker, motherfuck, motherfucked, motherfucker, motherfuckers, motherfuckin, motherfucking, motherfuckings, motherfuckka, motherfucks, muff, mutha, muthafecker, muthafuckker, muther, mutherfucker, n1gga, n1gger, nazi, nigg3r, nigg4h, nigga, niggah, niggas, niggaz, nigger, niggers , nob, nob jokey, nobhead, nobjocky, nobjokey, numbnuts, nutsack, orgasim , orgasims , orgasm, orgasms , p0rn, pawn, pecker, penis, penisfucker, phonesex, phuck, phuk, phuked, phuking, phukked, phukking, phuks, phuq, pigfucker, pimpis, piss, pissed, pisser, pissers, pisses , pissflaps, pissin , pissing, pissoff , poop, porn, porno, pornography, pornos, prick, pricks , pron, pube, pusse, pussi, pussies, pussy, pussys , rectum, retard, rimjaw, rimming, s hit, s.o.b., sadist, schlong, screwing, scroat, scrote, scrotum, semen, sex, sh!+, sh!t, sh1t, shag, shagger, shaggin, shagging, shemale, shi+, shit, shitdick, shite, shited, shitey, shitfuck, shitfull, shithead, shiting, shitings, shits, shitted, shitter, shitters , shitting, shittings, shitty , skank, slut, sluts, smegma, smut, snatch, son-of-a-bitch, spac, spunk, s_h_i_t, t1tt1e5, t1tties, teets, teez, testical, testicle, tit, titfuck, tits, titt, tittie5, tittiefucker, titties, tittyfuck, tittywank, titwank, tosser, turd, tw4t, twat, twathead, twatty, twunt, twunter, v14gra, v1gra, vagina, viagra, vulva, w00se, wang, wank, wanker, wanky, whoar, whore, willies, willy, xrated, xxx';
     const default_disallow_usernames_list = 'admin, moderator';
@@ -41,10 +41,10 @@ class Quick_Chat {
     const default_inactivity_timeout = '1800';
 
     const quick_flag_version_minimum = '2.00';
-    const quick_flag_link = 'http://www.techytalk.info/wordpress-plugins/quick-flag/';
-    const link = 'http://www.techytalk.info/wordpress-plugins/quick-chat/';
+    const quick_flag_link = 'http://www.techytalk.info/wordpress/quick-flag/';
+    const link = 'http://www.techytalk.info/wordpress/quick-chat/';
     const donate_link = 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CZQW2VZNHMGGN';
-    const support_link = 'http://www.techytalk.info/wordpress-plugins/quick-chat/';
+    const support_link = 'http://www.techytalk.info/wordpress/quick-chat/';
     const faq_link = 'http://wordpress.org/extend/plugins/quick-chat/faq/';
     const changelog_link = 'http://wordpress.org/extend/plugins/quick-chat/changelog/';
 
@@ -60,7 +60,7 @@ class Quick_Chat {
     public $ip_blocked;
     public $must_login;
     public $options;
-    
+
     protected $basename;
     protected $log_file;
     protected $db_version;
@@ -445,7 +445,7 @@ class Quick_Chat {
         global $wpdb;
         $quick_chat_messages_table_name = $wpdb->prefix . 'quick_chat_messages';
 
-        $ids = implode(', ', $wpdb->escape((array) $_POST['to_delete_ids']));
+        $ids = implode(', ', esc_sql((array) $_POST['to_delete_ids']));
         $rows_affected = $wpdb->query('DELETE FROM '.$quick_chat_messages_table_name.' WHERE id IN ('.$ids.');');
 
         $response = json_encode(array('rows_affected' => $rows_affected));
@@ -560,7 +560,7 @@ class Quick_Chat {
                 $_POST['message'] = links_add_target(make_clickable($_POST['message']));
             }
 
-            $wpdb->query('INSERT INTO '.$quick_chat_messages_table_name.' (wpid, room, timestamp, alias, status, ip, message) VALUES ( "'.$this->user_id.'", "'.$wpdb->escape($_POST['room']).'", NOW(), "'.(($_POST['sys_mes'] == 'true') ? 'quick_chat': $wpdb->escape($this->user_name)).'", '.$this->user_status.', "'.$this->user_ip.'", "'.$wpdb->escape($_POST['message']).'");');
+            $wpdb->query('INSERT INTO '.$quick_chat_messages_table_name.' (wpid, room, timestamp, alias, status, ip, message) VALUES ( "'.$this->user_id.'", "'.esc_sql($_POST['room']).'", NOW(), "'.(($_POST['sys_mes'] == 'true') ? 'quick_chat': esc_sql($this->user_name)).'", '.$this->user_status.', "'.$this->user_ip.'", "'.esc_sql($_POST['message']).'");');
         }
         $response = json_encode(array('no_participation' => $this->no_participation));
 
@@ -578,13 +578,13 @@ class Quick_Chat {
         header("Cache-Control: no-cache, must-revalidate");
         header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 
-        $rooms = implode('", "', $wpdb->escape((array)$_POST['rooms']));
+        $rooms = implode('", "', esc_sql((array)$_POST['rooms']));
 
         $startTime = time();
         while((time()-$startTime)<=20){
             $sql = 'SELECT id, wpid, room, timestamp, UNIX_TIMESTAMP(timestamp) AS unix_timestamp, alias, status, message FROM '
                                                     .$quick_chat_messages_table_name.' WHERE room IN ("'.$rooms.'") '
-                                                    .' AND timestamp > FROM_UNIXTIME('.$wpdb->escape($_POST['last_timestamp']).') '
+                                                    .' AND timestamp > FROM_UNIXTIME('.esc_sql($_POST['last_timestamp']).') '
                                                     .' ORDER BY unix_timestamp ASC';
 
             $messages = $wpdb->get_results($sql);
@@ -622,7 +622,7 @@ class Quick_Chat {
 
         $wpdb->query('DELETE FROM '.$quick_chat_users_table_name.' WHERE timestamp_polled < TIMESTAMPADD(SECOND,-'.($this->options['timeout_refresh_users']*2).',NOW());');
 
-        $rooms = $wpdb->escape((array)$_POST['rooms']);
+        $rooms = esc_sql((array)$_POST['rooms']);
         $last_room = end($rooms);
 
         $quick_chat_users_table_name = $wpdb->prefix . 'quick_chat_users';
@@ -635,8 +635,8 @@ class Quick_Chat {
         if($this->quick_flag_capable()){
             $sql_fetch_country = 'ccode as c, cname as m';
             if(($country_info = $this->country_info($this->user_ip)) != false){
-                $sql_update_country_code = '"'.$wpdb->escape($country_info->code).'"';
-                $sql_update_country_name = '"'.$wpdb->escape($country_info->name).'"';
+                $sql_update_country_code = '"'.esc_sql($country_info->code).'"';
+                $sql_update_country_name = '"'.esc_sql($country_info->name).'"';
             }
         }
 

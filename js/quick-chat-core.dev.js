@@ -1,4 +1,4 @@
-// Quick Chat 4.12 - core
+// Quick Chat 4.13 - core
 jQuery.fn.quick_chat_insert_at_caret = function(myValue) {
 
     return this.each(function() {
@@ -298,7 +298,7 @@ var quick_chat = jQuery.extend(quick_chat || {}, {
                                         typeof(state) != 'undefined'
                                         && state == 'm'){
                                         jQuery(this).find('div.quick-chat-container-private-minimize-restore a').click();
-                                        }
+                                    }
 
                                     jQuery(history_container).append(quick_chat.single_message_html(updates[i], avatars, false));
                                 } else if(quick_chat.last_timestamp != 0){
@@ -490,7 +490,7 @@ if(quick_chat.audio_support){
 
 quick_chat.update_users();
 
-jQuery('textarea.quick-chat-message').live('keypress', function(e) {
+jQuery(document).on('keypress', "textarea.quick-chat-message", function(e) {
     code = e.keyCode ? e.keyCode : e.which;
     if(code.toString() == 13) {
         e.preventDefault();
@@ -504,7 +504,7 @@ jQuery('textarea.quick-chat-message').live('keypress', function(e) {
     }
 });
 
-jQuery('input.quick-chat-send-button').bind('click', function(e) {
+jQuery("input.quick-chat-send-button").on('click', function(e) {
     e.preventDefault();
 
     var textarea = jQuery(this).siblings('textarea.quick-chat-message');
@@ -517,7 +517,7 @@ jQuery('input.quick-chat-send-button').bind('click', function(e) {
     jQuery(this).prev().focus();
 });
 
-jQuery("div.quick-chat-smile").bind('click', function() {
+jQuery("div.quick-chat-smile").on('click', function() {
     var input_textarea = jQuery(this).parents('.quick-chat-container').find('.quick-chat-message');
     var this_element = jQuery(this);
 
@@ -527,7 +527,7 @@ jQuery("div.quick-chat-smile").bind('click', function() {
     });
 });
 
-jQuery("div.quick-chat-history-alias a").live('click', function(e) {
+jQuery(document).on('click', "div.quick-chat-history-alias a", function(e) {
     e.preventDefault();
     var input_textarea = jQuery(this).parents('.quick-chat-container').find('.quick-chat-message');
     var this_element = jQuery(this);
@@ -538,7 +538,7 @@ jQuery("div.quick-chat-history-alias a").live('click', function(e) {
     });
 });
 
-jQuery("div.quick-chat-single-user a").live('click', function(e) {
+jQuery(document).on('click', "div.quick-chat-single-user a", function(e) {
     e.preventDefault();
 
     var chat_id = jQuery(this).parents('.quick-chat-container').attr('data-quick-chat-id');
@@ -566,7 +566,7 @@ jQuery("div.quick-chat-single-user a").live('click', function(e) {
     });
 });
 
-jQuery("div.quick-chat-container-private-close a").live('click', function(e) {
+jQuery(document).on('click', "div.quick-chat-container-private-close a", function(e) {
     e.preventDefault();
     var this_element = jQuery(this);
     var chat_id = jQuery(this).parents('.quick-chat-container').attr('data-quick-chat-id');
@@ -584,7 +584,7 @@ jQuery("div.quick-chat-container-private-close a").live('click', function(e) {
     });
 });
 
-jQuery("div.quick-chat-container-private-minimize-restore a").live('click', function(e) {
+jQuery(document).on('click', "div.quick-chat-container-private-minimize-restore a", function(e) {
     e.preventDefault();
     var chat_id = jQuery(this).parents('.quick-chat-container').attr('data-quick-chat-id');
     var private_chat_element = jQuery(this).parents('.quick-chat-container');
@@ -613,7 +613,7 @@ jQuery("div.quick-chat-container-private-minimize-restore a").live('click', func
     });
 });
 
-jQuery("div.quick-chat-sound-link a").bind('click', function(e) {
+jQuery("div.quick-chat-sound-link a").on('click', function(e) {
     e.preventDefault();
     var this_element = jQuery(this);
 
@@ -631,7 +631,7 @@ jQuery("div.quick-chat-sound-link a").bind('click', function(e) {
     });
 });
 
-jQuery("div.quick-chat-scroll-link a").bind('click', function(e) {
+jQuery("div.quick-chat-scroll-link a").on('click', function(e) {
     e.preventDefault();
 
     var chat_id = jQuery(this).parents('.quick-chat-container').attr('data-quick-chat-id');
@@ -651,7 +651,7 @@ jQuery("div.quick-chat-scroll-link a").bind('click', function(e) {
 });
 
 if(quick_chat.user_status == 0 || quick_chat.allow_change_username == 1){
-    jQuery('input.quick-chat-alias').bind('keyup', 'change', function(){
+    jQuery("input.quick-chat-alias").on('keyup change', function(){
         var username_check = jQuery.trim(jQuery(this).val());
         if(username_check != ''){
             var chat_id = jQuery(this).parents('.quick-chat-container').attr('data-quick-chat-id');
@@ -663,7 +663,7 @@ if(quick_chat.user_status == 0 || quick_chat.allow_change_username == 1){
 }
 
 if(quick_chat.user_status != 0){
-    jQuery('textarea.quick-chat-message').bind('keyup change input paste', function() {
+    jQuery('textarea.quick-chat-message').on('keyup change input paste', function() {
         var counter = jQuery(this).parents('.quick-chat-container').attr('data-quick-chat-counter');
         if(counter == 1){
             var counter_element = jQuery(this).parents('.quick-chat-container').find('span.quick-chat-counter');

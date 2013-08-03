@@ -5,9 +5,9 @@
   
 **Tags:** chat, ajax chat, simple chat, live chat
   
-**Requires at least:** 3.0
+**Requires at least:** 3.3
   
-**Tested up to:** 3.5
+**Tested up to:** 3.6
   
 **License:** GPL2
   
@@ -209,6 +209,14 @@ After Quick Chat loads its own CSS file it will search for quick-chat.css file i
 
 
 ## Changelog ##
+### 4.13 (04.08.2013.) ###
+*   Update PHP code to comply with latest WordPress changes
+*   Update Javascript code to comply with latest jQuery changes
+*   Bump minimum WordPress version to 3.3
+*   Fix chat user name input box bug with Twenty Thirteen theme
+*   Add back missing admin user options screenshot
+*   Update Persian, Swedish, Portuguese (Brasil), German, French and Russian translation files
+
 ### 4.12 (19.12.2012.) ###
 *   Fix bug where user list in 'top' position doesn't use comma to separate users
 
