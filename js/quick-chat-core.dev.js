@@ -293,7 +293,7 @@ var quick_chat = jQuery.extend(quick_chat || {}, {
         jQuery(window).on('focus', function() {
             if(quick_chat.favicon !== false) {
                 quick_chat.favicon.reset();
-                quick_chat.favicon = null;
+                quick_chat.favicon = false;
                 quick_chat.favicon_badge = 0;
             }
         });
