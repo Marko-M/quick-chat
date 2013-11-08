@@ -1,4 +1,6 @@
-// Quick Chat 4.13 - load
+/* Quick Chat 4.20
+ * http://www.techytalk.info/wordpress/quick-chat/
+ */
 var quick_chat = jQuery.extend(quick_chat || {}, {
     script_suffix: (quick_chat.debug_mode == 1) ? '.dev' : '',
     private_current_name: 'quick_chat_private_current_'+quick_chat.user_id,

@@ -3,7 +3,7 @@ Contributors: Marko-M
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CZQW2VZNHMGGN
 Tags: chat, ajax chat, simple chat, live chat
 Requires at least: 3.3
-Tested up to: 3.6
+Tested up to: 3.7.1
 License: GPL2
 Stable tag: trunk
 
@@ -20,7 +20,7 @@ WordPress chat plugin supporting private chat, chat rooms, avatars, user list, w
 *   Add PHP caching WordPress plugins like WP Super Cache or W3 Total Cache compatibility (See FAQ for more)
 *   Add feature to configure which WordPress user role has Quick Chat moderator capability
 *   Avoid losing CSS customizations after Quick Chat update (See FAQ for more)
-*   Supports [Quick Flag](http://www.techytalk.info/wordpress-plugins/quick-flag/) WordPress plugin to display country flag icons next to chat nicknames
+*   Supports [Quick Flag](http://www.techytalk.info/wordpress/quick-flag/) WordPress plugin to display country flag icons next to chat nicknames
 *   You can set timeout for disabling updates to inactive user
 *   Translating Quick Chat into your language is simple using Quick Chat [online translation interface](http://www.techytalk.info/glotpress/projects/quick-chat)
 *   Supports multiple private 1 on 1 chat sessions
@@ -42,12 +42,12 @@ WordPress chat plugin supporting private chat, chat rooms, avatars, user list, w
 
 <h4>My other WordPress plugins</h4>
 
-*   Voting polls plugin [Quick Poll](http://www.techytalk.info/wordpress-plugins/quick-poll/)
-*   Who is online plugin [Quick Count](http://www.techytalk.info/wordpress-plugins/quick-count/)
-*   Geolocation plugin [Quick Flag](http://www.techytalk.info/wordpress-plugins/quick-flag/)
-*   Browser capabilities plugin [Quick Browscap](http://www.techytalk.info/wordpress-plugins/quick-browscap/)
+*   Voting polls plugin [Quick Poll](http://www.techytalk.info/wordpress/quick-poll/)
+*   Who is online plugin [Quick Count](http://www.techytalk.info/wordpress/quick-count/)
+*   Geolocation plugin [Quick Flag](http://www.techytalk.info/wordpress/quick-flag/)
+*   Browser capabilities plugin [Quick Browscap](http://www.techytalk.info/wordpress/quick-browscap/)
 
-For more information and Quick Chat demo please visit [Quick Chat demo](http://www.techytalk.info/wordpress-plugins/quick-chat/) page at [TechyTalk.info](http://www.techytalk.info/).
+For more information and Quick Chat demo please visit [Quick Chat demo](http://www.techytalk.info/wordpress/quick-chat/) page at [TechyTalk.info](http://www.techytalk.info/).
 
 == Upgrade Notice ==
 = 4.00 =
@@ -162,7 +162,7 @@ Even if you can't see them, Quick Chat private chat invitations and private chat
 Translation feature has been removed as of Quick Chat 4.00 version because Microsoft has converted its translation service into paid service
 
 = 30. How do I enable or disable country flags on my chat user list? =
-Quick Chat is using [Quick Flag](http://www.techytalk.info/wordpress-plugins/quick-flag/) WordPress plugin to resolve IP address to country flag so to enable this feature you must install and activate Quick Flag plugin. To hide country flag display you can deactivate Quick Flag plugin or enable "Disable Quick Flag WordPress plugin integration" checkbox in Quick Count admin options.
+Quick Chat is using [Quick Flag](http://www.techytalk.info/wordpress/quick-flag/) WordPress plugin to resolve IP address to country flag so to enable this feature you must install and activate Quick Flag plugin. To hide country flag display you can deactivate Quick Flag plugin or enable "Disable Quick Flag WordPress plugin integration" checkbox in Quick Count admin options.
 
 = 31. How do I Avoid losing CSS customizations after Quick Chat update? =
 After Quick Chat loads its own CSS file it will search for quick-chat.css file inside your current theme directory. If this file exists Quick Chat will load it after its own CSS file. CSS customizations placed inside quick-chat.css file inside your theme directory wont be lost after Quick Chat upgrade (be aware that your theme upgrade will probably delete this file).
@@ -176,6 +176,10 @@ After Quick Chat loads its own CSS file it will search for quick-chat.css file i
 6.  Quick Chat admin options
 
 == Changelog ==
+= 4.20 (xx.xx.xxxx.) =
+*   Visual clues with number of messages when chat tab is out of focus
+*   Fix bug where admin options Hide and Show links could not be translated
+
 = 4.13 (04.08.2013.) =
 *   Update PHP code to comply with latest WordPress changes
 *   Update Javascript code to comply with latest jQuery changes

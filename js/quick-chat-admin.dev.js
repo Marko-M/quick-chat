@@ -1,4 +1,6 @@
-// Quick Chat 4.13 - admin
+/* Quick Chat 4.20
+ * http://www.techytalk.info/wordpress/quick-chat/
+ */
 function quick_chat_clean_private(){
     jQuery.post(quick_chat_admin.ajaxurl, {
         action: 'quick-chat-ajax-clean-private'},
@@ -18,10 +20,10 @@ jQuery(window).load(function(){
 
     jQuery("a.quick_chat_show_hide").on('click', function(e) {
         e.preventDefault();
-        if(jQuery(this).text() == 'Show'){
-            jQuery(this).text('Hide').siblings('textarea').slideDown('slow');
+        if(jQuery(this).text() == quick_chat_admin.i18n.slide_up){
+            jQuery(this).text(quick_chat_admin.i18n.slide_down).siblings('textarea').slideDown('slow');
         }else {
-            jQuery(this).text('Show').siblings('textarea').slideUp('slow');
+            jQuery(this).text(quick_chat_admin.i18n.slide_up).siblings('textarea').slideUp('slow');
         }
     });
 });

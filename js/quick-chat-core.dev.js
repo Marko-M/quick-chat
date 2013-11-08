@@ -1,4 +1,6 @@
-// Quick Chat 4.13 - core
+/* Quick Chat 4.20
+ * http://www.techytalk.info/wordpress/quick-chat/
+ */
 jQuery.fn.quick_chat_insert_at_caret = function(myValue) {
 
     return this.each(function() {
@@ -32,12 +34,272 @@ var quick_chat = jQuery.extend(quick_chat || {}, {
     private_queue: {},
     private_current: {},
     private_count: 0,
+    favicon: false,
+    favicon_badge: 0,
     audio_support: 0,
     play_audio: 0,
     audio_element: document.createElement('audio'),
     update_users_limit: Math.floor( quick_chat.inactivity_timeout / quick_chat.timeout_refresh_users),
     update_users_counter: 0,
     private_queue_name: 'quick_chat_private_queue_'+quick_chat.user_id,
+    init_core: function() {
+        if(quick_chat.audio_element.canPlayType){
+            if(quick_chat.audio_element.canPlayType('audio/ogg; codecs="vorbis"')) {
+                quick_chat.audio_element.setAttribute('src', quick_chat.url+'/sounds/message-sound.ogg');
+                quick_chat.audio_element.setAttribute('preload', 'auto');
+                quick_chat.audio_support = 1;
+            } else if(quick_chat.audio_element.canPlayType('audio/mpeg;')){
+                quick_chat.audio_element.setAttribute('src', quick_chat.url+'sounds/message-sound.mp3');
+                quick_chat.audio_element.setAttribute('preload', 'auto');
+                quick_chat.audio_support = 1;
+            } else if(quick_chat.audio_element.canPlayType('audio/wav; codecs="1"')){
+                quick_chat.audio_element.setAttribute('src', quick_chat.url+'sounds/message-sound.wav');
+                quick_chat.audio_element.setAttribute('preload', 'auto');
+                quick_chat.audio_support = 1;
+            }
+        }
+
+        if(quick_chat.audio_support == 1){
+            if(jQuery.cookie('quick_chat_sound_state'))
+                quick_chat.play_audio = jQuery.cookie('quick_chat_sound_state');
+            else
+                quick_chat.play_audio = quick_chat.audio_enable;
+        }
+
+        if(quick_chat.no_participation == 0){
+            if(jQuery.cookie(quick_chat.private_queue_name) != null)
+                quick_chat.private_queue = jQuery.parseJSON(jQuery.cookie(quick_chat.private_queue_name));
+
+            if(jQuery.cookie(quick_chat.private_current_name) != null)
+                quick_chat.private_current = jQuery.parseJSON(jQuery.cookie(quick_chat.private_current_name));
+
+            for (var quick_chat_pc_room_name in quick_chat.private_current)
+                quick_chat.spawn_private_chat(quick_chat_pc_room_name, quick_chat.private_current[quick_chat_pc_room_name]['him'], quick_chat.private_current[quick_chat_pc_room_name]['state']);
+        }
+
+        quick_chat.update_rooms();
+
+        if(quick_chat.audio_support){
+            jQuery("div.quick-chat-sound-link").css('display','block');
+            quick_chat.update_sound_state();
+        }
+
+        quick_chat.update_users();
+
+        jQuery(document).on('keypress', "textarea.quick-chat-message", function(e) {
+            code = e.keyCode ? e.keyCode : e.which;
+            if(code.toString() == 13) {
+                e.preventDefault();
+
+                var message_text = jQuery.trim(jQuery(this).val());
+                if(message_text != ''){
+                    var chat_id = jQuery(this).parents('.quick-chat-container').attr('data-quick-chat-id');
+                    jQuery(this).val('');
+                    quick_chat.new_message(chat_id, message_text, false);
+                }
+            }
+        });
+
+        jQuery("input.quick-chat-send-button").on('click', function(e) {
+            e.preventDefault();
+
+            var textarea = jQuery(this).siblings('textarea.quick-chat-message');
+            var message_text = jQuery.trim(jQuery(textarea).val());
+            if(message_text != ''){
+                var chat_id = jQuery(this).parents('.quick-chat-container').attr('data-quick-chat-id');
+                jQuery(textarea).val('');
+                quick_chat.new_message(chat_id, message_text, false);
+            }
+            jQuery(this).prev().focus();
+        });
+
+        jQuery("div.quick-chat-smile").on('click', function() {
+            var input_textarea = jQuery(this).parents('.quick-chat-container').find('.quick-chat-message');
+            var this_element = jQuery(this);
+
+            jQuery(this).fadeTo(100, 0, function() {
+                jQuery(input_textarea).quick_chat_insert_at_caret(jQuery(this_element).attr('title')).trigger('change');
+                jQuery(this_element).fadeTo(100, 1);
+            });
+        });
+
+        jQuery(document).on('click', "div.quick-chat-history-alias a", function(e) {
+            e.preventDefault();
+            var input_textarea = jQuery(this).parents('.quick-chat-container').find('.quick-chat-message');
+            var this_element = jQuery(this);
+
+            jQuery(this).fadeTo(100, 0, function() {
+                jQuery(input_textarea).quick_chat_insert_at_caret('@'+jQuery(this_element).text()+': ');
+                jQuery(this_element).fadeTo(100, 1);
+            });
+        });
+
+        jQuery(document).on('click', "div.quick-chat-single-user a", function(e) {
+            e.preventDefault();
+
+            var chat_id = jQuery(this).parents('.quick-chat-container').attr('data-quick-chat-id');
+            var this_element = jQuery(this);
+
+            jQuery(this).fadeTo(100, 0, function() {
+                var mes_room_name = quick_chat.random_string(12);
+                var sys_mes = jQuery.parseJSON('{"'+mes_room_name+'":{"private_from":"'+quick_chat.user_name+'","private_to":"'+jQuery(this_element).text()+'"}}');
+                var sys_mes_type = 'INV';
+                var question = quick_chat.i18n.private_invite_confirm_s.replace('%s',jQuery(this_element).text());
+
+                for (var pq_room_name in quick_chat.private_queue){
+                    if(quick_chat.is_private_eq(quick_chat.private_queue[pq_room_name], sys_mes[mes_room_name]))
+                        sys_mes_type = 'ACK';
+
+                    question = quick_chat.i18n.private_accept_confirm_s.replace('%s',jQuery(this_element).text());
+                    break;
+                }
+
+                if (confirm(question)){
+                    sys_mes[mes_room_name]['type'] = sys_mes_type;
+                    quick_chat.new_message(chat_id, jQuery.toJSON(sys_mes), true);
+                }
+                jQuery(this_element).fadeTo(100, 1);
+            });
+        });
+
+        jQuery(document).on('click', "div.quick-chat-container-private-close a", function(e) {
+            e.preventDefault();
+            var this_element = jQuery(this);
+            var chat_id = jQuery(this).parents('.quick-chat-container').attr('data-quick-chat-id');
+
+            jQuery(this).fadeTo(100, 0, function() {
+                delete quick_chat.data[chat_id];
+
+                delete quick_chat.private_current[chat_id];
+                quick_chat.update_private_cookie(quick_chat.private_current_name, quick_chat.private_current);
+                quick_chat.private_count--;
+
+                quick_chat.update_rooms();
+                jQuery(this).parents('.quick-chat-container').remove();
+                jQuery(this_element).fadeTo(100, 1);
+            });
+        });
+
+        jQuery(document).on('click', "div.quick-chat-container-private-minimize-restore a", function(e) {
+            e.preventDefault();
+            var chat_id = jQuery(this).parents('.quick-chat-container').attr('data-quick-chat-id');
+            var private_chat_element = jQuery(this).parents('.quick-chat-container');
+            var state = quick_chat.data[chat_id]['state'];
+            var this_element = jQuery(this);
+
+            jQuery(this).fadeTo(100, 0, function() {
+                if(state == 'o'){
+                    jQuery(this_element).attr('title',quick_chat.private_restore);
+                    quick_chat.data[chat_id]['state'] = 'm';
+                    quick_chat.private_current[chat_id]['state'] = 'm';
+                    quick_chat.update_private_cookie(quick_chat.private_current_name, quick_chat.private_current);
+                    jQuery(this_element).text('o');
+
+                    quick_chat.private_bottom_position(private_chat_element, 'm');
+                } else if(state == 'm'){
+                    jQuery(this_element).attr('title',quick_chat.private_minimize);
+                    quick_chat.data[chat_id]['state'] = 'o';
+                    quick_chat.private_current[chat_id]['state'] = 'o';
+                    quick_chat.update_private_cookie(quick_chat.private_current_name, quick_chat.private_current);
+                    jQuery(this_element).text('-');
+
+                    quick_chat.private_bottom_position(private_chat_element, 'o');
+                }
+                jQuery(this_element).fadeTo(100, 1);
+            });
+        });
+
+        jQuery("div.quick-chat-sound-link a").on('click', function(e) {
+            e.preventDefault();
+            var this_element = jQuery(this);
+
+            jQuery(this).fadeTo(100, 0, function() {
+                if(quick_chat.play_audio == 1)
+                    quick_chat.play_audio = 0;
+                    else
+                    quick_chat.play_audio = 1;
+
+                jQuery.cookie('quick_chat_sound_state', quick_chat.play_audio, {path: quick_chat.cookiepath, domain: quick_chat.cookie_domain});
+
+                quick_chat.update_sound_state();
+
+                jQuery(this_element).fadeTo(100, 1);
+            });
+        });
+
+        jQuery("div.quick-chat-scroll-link a").on('click', function(e) {
+            e.preventDefault();
+
+            var chat_id = jQuery(this).parents('.quick-chat-container').attr('data-quick-chat-id');
+            var scroll_enable = quick_chat.data[chat_id]['scroll_enable'];
+            var this_element = jQuery(this);
+
+            jQuery(this).fadeTo(100, 0, function() {
+                if(scroll_enable == 0){
+                    quick_chat.data[chat_id]['scroll_enable'] = 1;
+                    jQuery(this_element).css('text-decoration','none');
+                } else{
+                    quick_chat.data[chat_id]['scroll_enable'] = 0;
+                    jQuery(this_element).css('text-decoration','line-through');
+                }
+                jQuery(this_element).fadeTo(100, 1);
+            });
+        });
+
+        if(quick_chat.user_status == 0 || quick_chat.allow_change_username == 1){
+            jQuery("input.quick-chat-alias").on('keyup change', function(){
+                var username_check = jQuery.trim(jQuery(this).val());
+                if(username_check != ''){
+                    var chat_id = jQuery(this).parents('.quick-chat-container').attr('data-quick-chat-id');
+                    var username_status_element = jQuery(this).parents('.quick-chat-container').find('span.quick-chat-username-status');
+
+                    quick_chat.check_username(chat_id, username_check, username_status_element);
+                }
+            });
+        }
+
+        if(quick_chat.user_status != 0){
+            jQuery('textarea.quick-chat-message').on('keyup change input paste', function() {
+                var counter = jQuery(this).parents('.quick-chat-container').attr('data-quick-chat-counter');
+                if(counter == 1){
+                    var counter_element = jQuery(this).parents('.quick-chat-container').find('span.quick-chat-counter');
+                    var count = jQuery(this).val().length;
+                    var available = quick_chat.message_maximum_number_chars - count;
+                    if(available <= 25 && available >= 0)
+                        jQuery(counter_element).addClass('quick-chat-warning');
+                    else
+                        jQuery(counter_element).removeClass('quick-chat-warning');
+
+                    if(available < 0)
+                        jQuery(counter_element).addClass('quick-chat-exceeded');
+                    else
+                        jQuery(counter_element).removeClass('quick-chat-exceeded');
+
+                    jQuery(counter_element).html(available);
+                }
+            });
+        }
+
+        jQuery(window).on('blur', function() {
+            try {
+                quick_chat.favicon = new Favico({
+                    animation : 'popFade'
+                });
+            } catch(e) {
+                quick_chat.favicon = false;
+            }
+        });
+
+        jQuery(window).on('focus', function() {
+            if(quick_chat.favicon !== false) {
+                quick_chat.favicon.reset();
+                quick_chat.favicon = null;
+                quick_chat.favicon_badge = 0;
+            }
+        });
+
+        quick_chat.update_messages();        
+    },
     random_string: function(length) {
         var iteration = 0;
         var string = "";
@@ -293,6 +555,10 @@ var quick_chat = jQuery.extend(quick_chat || {}, {
                                         already_notified = 1;
                                     }
 
+                                    if(quick_chat.favicon !== false) {
+                                        quick_chat.favicon.badge(++quick_chat.favicon_badge);
+                                    }
+
                                     if( quick_chat.last_timestamp != 0
                                         &&
                                         typeof(state) != 'undefined'
@@ -447,241 +713,4 @@ var quick_chat = jQuery.extend(quick_chat || {}, {
     }
 });
 
-if(quick_chat.audio_element.canPlayType){
-    if(quick_chat.audio_element.canPlayType('audio/ogg; codecs="vorbis"')) {
-        quick_chat.audio_element.setAttribute('src', quick_chat.url+'/sounds/message-sound.ogg');
-        quick_chat.audio_element.setAttribute('preload', 'auto');
-        quick_chat.audio_support = 1;
-    } else if(quick_chat.audio_element.canPlayType('audio/mpeg;')){
-        quick_chat.audio_element.setAttribute('src', quick_chat.url+'sounds/message-sound.mp3');
-        quick_chat.audio_element.setAttribute('preload', 'auto');
-        quick_chat.audio_support = 1;
-    } else if(quick_chat.audio_element.canPlayType('audio/wav; codecs="1"')){
-        quick_chat.audio_element.setAttribute('src', quick_chat.url+'sounds/message-sound.wav');
-        quick_chat.audio_element.setAttribute('preload', 'auto');
-        quick_chat.audio_support = 1;
-    }
-}
-
-if(quick_chat.audio_support == 1){
-    if(jQuery.cookie('quick_chat_sound_state'))
-        quick_chat.play_audio = jQuery.cookie('quick_chat_sound_state');
-    else
-        quick_chat.play_audio = quick_chat.audio_enable;
-}
-
-if(quick_chat.no_participation == 0){
-    if(jQuery.cookie(quick_chat.private_queue_name) != null)
-        quick_chat.private_queue = jQuery.parseJSON(jQuery.cookie(quick_chat.private_queue_name));
-
-    if(jQuery.cookie(quick_chat.private_current_name) != null)
-        quick_chat.private_current = jQuery.parseJSON(jQuery.cookie(quick_chat.private_current_name));
-
-    for (var quick_chat_pc_room_name in quick_chat.private_current)
-        quick_chat.spawn_private_chat(quick_chat_pc_room_name, quick_chat.private_current[quick_chat_pc_room_name]['him'], quick_chat.private_current[quick_chat_pc_room_name]['state']);
-}
-
-quick_chat.update_rooms();
-
-if(quick_chat.audio_support){
-    jQuery("div.quick-chat-sound-link").css('display','block');
-    quick_chat.update_sound_state();
-}
-
-quick_chat.update_users();
-
-jQuery(document).on('keypress', "textarea.quick-chat-message", function(e) {
-    code = e.keyCode ? e.keyCode : e.which;
-    if(code.toString() == 13) {
-        e.preventDefault();
-
-        var message_text = jQuery.trim(jQuery(this).val());
-        if(message_text != ''){
-            var chat_id = jQuery(this).parents('.quick-chat-container').attr('data-quick-chat-id');
-            jQuery(this).val('');
-            quick_chat.new_message(chat_id, message_text, false);
-        }
-    }
-});
-
-jQuery("input.quick-chat-send-button").on('click', function(e) {
-    e.preventDefault();
-
-    var textarea = jQuery(this).siblings('textarea.quick-chat-message');
-    var message_text = jQuery.trim(jQuery(textarea).val());
-    if(message_text != ''){
-        var chat_id = jQuery(this).parents('.quick-chat-container').attr('data-quick-chat-id');
-        jQuery(textarea).val('');
-        quick_chat.new_message(chat_id, message_text, false);
-    }
-    jQuery(this).prev().focus();
-});
-
-jQuery("div.quick-chat-smile").on('click', function() {
-    var input_textarea = jQuery(this).parents('.quick-chat-container').find('.quick-chat-message');
-    var this_element = jQuery(this);
-
-    jQuery(this).fadeTo(100, 0, function() {
-        jQuery(input_textarea).quick_chat_insert_at_caret(jQuery(this_element).attr('title')).trigger('change');
-        jQuery(this_element).fadeTo(100, 1);
-    });
-});
-
-jQuery(document).on('click', "div.quick-chat-history-alias a", function(e) {
-    e.preventDefault();
-    var input_textarea = jQuery(this).parents('.quick-chat-container').find('.quick-chat-message');
-    var this_element = jQuery(this);
-
-    jQuery(this).fadeTo(100, 0, function() {
-        jQuery(input_textarea).quick_chat_insert_at_caret('@'+jQuery(this_element).text()+': ');
-        jQuery(this_element).fadeTo(100, 1);
-    });
-});
-
-jQuery(document).on('click', "div.quick-chat-single-user a", function(e) {
-    e.preventDefault();
-
-    var chat_id = jQuery(this).parents('.quick-chat-container').attr('data-quick-chat-id');
-    var this_element = jQuery(this);
-
-    jQuery(this).fadeTo(100, 0, function() {
-        var mes_room_name = quick_chat.random_string(12);
-        var sys_mes = jQuery.parseJSON('{"'+mes_room_name+'":{"private_from":"'+quick_chat.user_name+'","private_to":"'+jQuery(this_element).text()+'"}}');
-        var sys_mes_type = 'INV';
-        var question = quick_chat.i18n.private_invite_confirm_s.replace('%s',jQuery(this_element).text());
-
-        for (var pq_room_name in quick_chat.private_queue){
-            if(quick_chat.is_private_eq(quick_chat.private_queue[pq_room_name], sys_mes[mes_room_name]))
-                sys_mes_type = 'ACK';
-
-            question = quick_chat.i18n.private_accept_confirm_s.replace('%s',jQuery(this_element).text());
-            break;
-        }
-
-        if (confirm(question)){
-            sys_mes[mes_room_name]['type'] = sys_mes_type;
-            quick_chat.new_message(chat_id, jQuery.toJSON(sys_mes), true);
-        }
-        jQuery(this_element).fadeTo(100, 1);
-    });
-});
-
-jQuery(document).on('click', "div.quick-chat-container-private-close a", function(e) {
-    e.preventDefault();
-    var this_element = jQuery(this);
-    var chat_id = jQuery(this).parents('.quick-chat-container').attr('data-quick-chat-id');
-
-    jQuery(this).fadeTo(100, 0, function() {
-        delete quick_chat.data[chat_id];
-
-        delete quick_chat.private_current[chat_id];
-        quick_chat.update_private_cookie(quick_chat.private_current_name, quick_chat.private_current);
-        quick_chat.private_count--;
-
-        quick_chat.update_rooms();
-        jQuery(this).parents('.quick-chat-container').remove();
-        jQuery(this_element).fadeTo(100, 1);
-    });
-});
-
-jQuery(document).on('click', "div.quick-chat-container-private-minimize-restore a", function(e) {
-    e.preventDefault();
-    var chat_id = jQuery(this).parents('.quick-chat-container').attr('data-quick-chat-id');
-    var private_chat_element = jQuery(this).parents('.quick-chat-container');
-    var state = quick_chat.data[chat_id]['state'];
-    var this_element = jQuery(this);
-
-    jQuery(this).fadeTo(100, 0, function() {
-        if(state == 'o'){
-            jQuery(this_element).attr('title',quick_chat.private_restore);
-            quick_chat.data[chat_id]['state'] = 'm';
-            quick_chat.private_current[chat_id]['state'] = 'm';
-            quick_chat.update_private_cookie(quick_chat.private_current_name, quick_chat.private_current);
-            jQuery(this_element).text('o');
-
-            quick_chat.private_bottom_position(private_chat_element, 'm');
-        } else if(state == 'm'){
-            jQuery(this_element).attr('title',quick_chat.private_minimize);
-            quick_chat.data[chat_id]['state'] = 'o';
-            quick_chat.private_current[chat_id]['state'] = 'o';
-            quick_chat.update_private_cookie(quick_chat.private_current_name, quick_chat.private_current);
-            jQuery(this_element).text('-');
-
-            quick_chat.private_bottom_position(private_chat_element, 'o');
-        }
-        jQuery(this_element).fadeTo(100, 1);
-    });
-});
-
-jQuery("div.quick-chat-sound-link a").on('click', function(e) {
-    e.preventDefault();
-    var this_element = jQuery(this);
-
-    jQuery(this).fadeTo(100, 0, function() {
-        if(quick_chat.play_audio == 1)
-            quick_chat.play_audio = 0;
-            else
-            quick_chat.play_audio = 1;
-
-        jQuery.cookie('quick_chat_sound_state', quick_chat.play_audio, {path: quick_chat.cookiepath, domain: quick_chat.cookie_domain});
-
-        quick_chat.update_sound_state();
-
-        jQuery(this_element).fadeTo(100, 1);
-    });
-});
-
-jQuery("div.quick-chat-scroll-link a").on('click', function(e) {
-    e.preventDefault();
-
-    var chat_id = jQuery(this).parents('.quick-chat-container').attr('data-quick-chat-id');
-    var scroll_enable = quick_chat.data[chat_id]['scroll_enable'];
-    var this_element = jQuery(this);
-
-    jQuery(this).fadeTo(100, 0, function() {
-        if(scroll_enable == 0){
-            quick_chat.data[chat_id]['scroll_enable'] = 1;
-            jQuery(this_element).css('text-decoration','none');
-        } else{
-            quick_chat.data[chat_id]['scroll_enable'] = 0;
-            jQuery(this_element).css('text-decoration','line-through');
-        }
-        jQuery(this_element).fadeTo(100, 1);
-    });
-});
-
-if(quick_chat.user_status == 0 || quick_chat.allow_change_username == 1){
-    jQuery("input.quick-chat-alias").on('keyup change', function(){
-        var username_check = jQuery.trim(jQuery(this).val());
-        if(username_check != ''){
-            var chat_id = jQuery(this).parents('.quick-chat-container').attr('data-quick-chat-id');
-            var username_status_element = jQuery(this).parents('.quick-chat-container').find('span.quick-chat-username-status');
-
-            quick_chat.check_username(chat_id, username_check, username_status_element);
-        }
-    });
-}
-
-if(quick_chat.user_status != 0){
-    jQuery('textarea.quick-chat-message').on('keyup change input paste', function() {
-        var counter = jQuery(this).parents('.quick-chat-container').attr('data-quick-chat-counter');
-        if(counter == 1){
-            var counter_element = jQuery(this).parents('.quick-chat-container').find('span.quick-chat-counter');
-            var count = jQuery(this).val().length;
-            var available = quick_chat.message_maximum_number_chars - count;
-            if(available <= 25 && available >= 0)
-                jQuery(counter_element).addClass('quick-chat-warning');
-            else
-                jQuery(counter_element).removeClass('quick-chat-warning');
-
-            if(available < 0)
-                jQuery(counter_element).addClass('quick-chat-exceeded');
-            else
-                jQuery(counter_element).removeClass('quick-chat-exceeded');
-
-            jQuery(counter_element).html(available);
-        }
-    });
-}
-
-quick_chat.update_messages();
+quick_chat.init_core();

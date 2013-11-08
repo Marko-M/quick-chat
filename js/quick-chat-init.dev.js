@@ -1,12 +1,9 @@
-// Quick Chat 4.13 - init
+/* Quick Chat 4.20
+ * http://www.techytalk.info/wordpress/quick-chat/
+ */
 var quick_chat = jQuery.extend(quick_chat || {}, {
-    data: []
-});
-
-jQuery.post(
-    quick_chat.ajaxurl,
-    {action: 'quick-chat-ajax-init'},
-    function(data) {
+    data: [],
+    init: function(data) {
         quick_chat = jQuery.extend(true, quick_chat || {}, data.js_vars);
 
         jQuery("div.quick-chat-container").each(function(){
@@ -109,4 +106,13 @@ jQuery.post(
 
         if(quick_chat.user_status == 0)
             quick_chat.get_script(quick_chat.url+'js/quick-chat-power'+quick_chat.script_suffix+'.js?'+quick_chat.version);
+        
+            quick_chat.get_script(quick_chat.url+'js/favico'+quick_chat.script_suffix+'.js?'+quick_chat.version);                
+    }
 });
+
+jQuery.post(
+    quick_chat.ajaxurl,
+    {action: 'quick-chat-ajax-init'},
+    quick_chat.init
+);
